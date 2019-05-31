@@ -30,7 +30,6 @@ class FilterControls extends Component {
     const url = 'http://strainapi.evanbusse.com/AqtPtuS/strains/search/race/sativa'
     const response = await fetch(url)
     const results = await response.json()
-    console.log(results)
       this.props.addSativa(results)
   }
 
@@ -38,7 +37,6 @@ class FilterControls extends Component {
     const url = 'http://strainapi.evanbusse.com/AqtPtuS/strains/search/race/indica'
     const response = await fetch(url)
     const results = await response.json()
-    console.log(results)
       this.props.addIndica(results)
   }
 
@@ -46,17 +44,16 @@ class FilterControls extends Component {
     const url = 'http://strainapi.evanbusse.com/AqtPtuS/strains/search/race/hybrid'
     const response = await fetch(url)
     const results = await response.json()
-    console.log(results)
       this.props.addHybrid(results)
   }
 
 
-  setFilter = (event) => {
-    event.preventDefault();
-    this.setState({
-      selectedFilter: event.target.value
-    })
-  }
+  // setFilter = (event) => {
+  //   event.preventDefault();
+  //   this.setState({
+  //     selectedFilter: event.target.value
+  //   })
+  // }
 
 
   render() {
@@ -68,16 +65,12 @@ class FilterControls extends Component {
         </button>
         <button
           value="hybrid"
-          onClick={this.fetchtHybrid}>HYBRID
+          onClick={this.fetchHybrid}>HYBRID
         </button>
         <button
           value="indica"
           onClick={this.fetchIndica}>INDICA
         </button>
-        <button
-        onClick={this.fetchIndica}
-        
-        >CLICK ME </button>
       </div>
     )
   }
