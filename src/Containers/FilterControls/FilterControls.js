@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { addSativa, addIndica, addHybrid } from '../../Actions'
+import './FilterControls.scss'
 
 class FilterControls extends Component {
 
@@ -18,13 +19,21 @@ class FilterControls extends Component {
   //   const results = await response.json()
   //   console.log(results)
   //     if(this.state.selectedFilter === 'sativa'){
-  //       await this.props.addSativa(results)
+  //        this.props.addSativa(results)
   //     } else if (this.state.selectedFilter === 'hybrid'){
-  //       await this.props.addHybrid(results)
+  //        this.props.addHybrid(results)
   //     } else if (this.props.selectedFilter === 'indica') {
-  //       await this.props.addIndica(results)
+  //        this.props.addIndica(results)
   //     }
   // }
+
+  // setFilter = (event) => {
+  //   event.preventDefault();
+  //   this.setState({
+  //     selectedFilter: event.target.value
+  //   })
+  // }
+
 
   fetchSativa=  async () => {
     const url = 'http://strainapi.evanbusse.com/AqtPtuS/strains/search/race/sativa'
@@ -48,26 +57,21 @@ class FilterControls extends Component {
   }
 
 
-  // setFilter = (event) => {
-  //   event.preventDefault();
-  //   this.setState({
-  //     selectedFilter: event.target.value
-  //   })
-  // }
-
-
   render() {
     return (
-      <div>
+      <div className="button-container">
         <button
+          className='filter-button'
           value="sativa"
           onClick={this.fetchSativa}>SATIVA
         </button>
         <button
+          className='filter-button'
           value="hybrid"
           onClick={this.fetchHybrid}>HYBRID
         </button>
         <button
+          className='filter-button'
           value="indica"
           onClick={this.fetchIndica}>INDICA
         </button>

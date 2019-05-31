@@ -7,8 +7,8 @@ class App extends Component{
 
   render() {
     return (
-      <div>
-        <h1 className='hi'>hello</h1>
+      <div className='app'>
+        <h1 className='hi'>Out of Towner</h1>
         <FilterControls />
       </div>
     );

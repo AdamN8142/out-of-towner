@@ -1,3 +1,19 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
 .hi {
-  color:red
+  color:white;
+  text-align: center;
+  font-size: 100px;
+
+}
+
+ .app {
+  background-image: url('http://eskipaper.com/images/high-resolution-backgrounds-26.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
