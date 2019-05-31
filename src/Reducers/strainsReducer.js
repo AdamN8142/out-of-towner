@@ -1,5 +1,9 @@
-
-export const strainsReducer = (state = {}, action) => {
+const initialState = {
+  sativa: [],
+  indica: [],
+  hybrid: []
+}
+export const strainsReducer = (state = initialState, action) => {
   switch(action.type) {
     case 'ADD_SATIVA':
       return {...state, sativa: [action.sativa]}

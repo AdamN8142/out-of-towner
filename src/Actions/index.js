@@ -12,3 +12,8 @@ export const addHybrid = (hybrid) => ({
   type: 'ADD_HYBRID',
   hybrid
 })
+
+export const setFilter = (filter) => ({
+  type: 'SET_FILTER',
+  filter
+})
