@@ -34,12 +34,7 @@ class Filter extends Component {
 
   render(){
     return (
-      <button
-        onClick={() => this.handleClick()}
-        >
-        {this.props.children}
-      </button>
-
+      <button onClick={() => this.handleClick()}>{this.props.children}</button>
     )
   }
 }

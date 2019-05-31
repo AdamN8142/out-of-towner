@@ -11,6 +11,15 @@ export const strainsReducer = (state = initialState, action) => {
       return {...state, indica: [action.indica]}
     case 'ADD_HYBRID':
       return {...state, hybrid: [action.hybrid]}
+    case 'ADD-DESCRIPTION':
+      const withDescription = state[action.filter].map((weed)=> {
+        if(weed.id === action.id) {
+          return {...weed, description: action.description}
+        } else {
+          return weed
+        }
+      })
+        return {...state, [action.filter]: withDescription}
     default:
         return state 
   }
