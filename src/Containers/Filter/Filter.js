@@ -11,10 +11,13 @@ class Filter extends Component {
     switch(this.props.filter) {
       case 'Sativa':
         this.props.addSativa(strain)
+        break;
       case 'Indica':
         this.props.addIndica(strain)
+        break;
       case 'Hybrid':
         this.props.addHybrid(strain) 
+        break;
       default:
         break;
     } 
