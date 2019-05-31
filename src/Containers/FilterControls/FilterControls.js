@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 
 class FilterControls extends Component {
   render() {
@@ -13,4 +14,13 @@ class FilterControls extends Component {
   }
 }
 
-export default FilterControls;
+
+const mapStateToProps = (state) => ({
+
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(FilterControls);
