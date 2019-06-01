@@ -5,29 +5,45 @@ class StrainContainer extends Component {
 
 
 
-  // showWeed = () => {
-  //   let weedtoShow 
-  //  if(this.props.fitler === ' ')
-    
-  // }
-
-
-  //make function in this component and run that func in 
-  render(){
-    console.log(this.props)
-    return(
-  
-        <ul>
-        {this.props.strain.sativa.map((item)=> {
-           return item.map((bud)=>{
-            return (   
+  displayStrains = () => {
+    let strainsToShow; 
+    if(this.props.filter === 'Sativa') {
+       strainsToShow =  this.props.strain.sativa.map((item)=> {
+        return item.map((bud)=> {
+          return ( 
             <li>{bud.name}</li>
-            )
-          })
+          )
         })
-      }
-        </ul>
-      
+      })
+      return strainsToShow
+    } else if (this.props.filter === 'Indica') {
+      strainsToShow = this.props.strain.indica.map((item)=> {
+        return item.map((bud)=> {
+          return (
+            <li>{bud.name}</li>
+          )
+        })
+      })
+      return strainsToShow
+    } else if (this.props.filter === "Hybrid") {
+      strainsToShow = this.props.strain.hybrid.map((item)=> {
+        return item.map((bud)=> {
+          return (
+            <li>{bud.name}</li>
+          )
+        })
+      })
+      return strainsToShow
+    }
+  }
+  
+
+
+  render(){
+    return (
+          <div>
+            {this.displayStrains()}
+          </div>
     )
   }
 }
@@ -39,6 +55,10 @@ const mapStateToProps = (state) => ({
   })
 
 export default connect(mapStateToProps)(StrainContainer)
+
+
+
+
 
 
 
