@@ -33,12 +33,14 @@ class Filter extends Component {
   }
 
   displayLinks = () => {
-    const mappedLinks = this.props.strain.indica.map((item)=> {
+    const mappedLinks = this.props.strain.sativa.map((item)=> {
       const links = item.map((bud)=>{
         console.log(bud.name)
         return (      
           <div>
             
+
+
           </div>
         )
     })
