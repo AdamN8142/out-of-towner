@@ -2,13 +2,32 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class StrainContainer extends Component {
+
+
+
+  // showWeed = () => {
+  //   let weedtoShow 
+  //  if(this.props.fitler === ' ')
+    
+  // }
+
+
+  //make function in this component and run that func in 
   render(){
+    console.log(this.props)
     return(
-      <div>
+  
         <ul>
-          
+        {this.props.strain.sativa.map((item)=> {
+           return item.map((bud)=>{
+            return (   
+            <li>{bud.name}</li>
+            )
+          })
+        })
+      }
         </ul>
-      </div>
+      
     )
   }
 }
@@ -20,3 +39,7 @@ const mapStateToProps = (state) => ({
   })
 
 export default connect(mapStateToProps)(StrainContainer)
+
+
+
+
