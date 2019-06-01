@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom'
+import '../StrainContainer/StrainContainer.scss'
 
 class StrainContainer extends Component {
-
-
 
   displayStrains = () => {
     let strainsToShow; 
@@ -11,7 +11,10 @@ class StrainContainer extends Component {
        strainsToShow =  this.props.strain.sativa.map((item)=> {
         return item.map((bud)=> {
           return ( 
-            <li>{bud.name}</li>
+            <NavLink
+            className='navlink'
+            to={`/${bud.name}`}
+            >{bud.name}</NavLink>
           )
         })
       })
@@ -20,7 +23,10 @@ class StrainContainer extends Component {
       strainsToShow = this.props.strain.indica.map((item)=> {
         return item.map((bud)=> {
           return (
-            <li>{bud.name}</li>
+            <NavLink
+            className='navlink'
+            to={`/${bud.name}`}
+            >{bud.name}</NavLink>
           )
         })
       })
@@ -29,7 +35,10 @@ class StrainContainer extends Component {
       strainsToShow = this.props.strain.hybrid.map((item)=> {
         return item.map((bud)=> {
           return (
-            <li>{bud.name}</li>
+            <NavLink
+            className='navlink'
+            to={`/${bud.name}`}
+            >{bud.name}</NavLink>
           )
         })
       })
