@@ -50,7 +50,7 @@ class StrainContainer extends Component {
 
   render(){
     return (
-          <div>
+          <div className="strains-container">
             {this.displayStrains()}
           </div>
     )

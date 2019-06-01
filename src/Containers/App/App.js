@@ -11,6 +11,7 @@ class App extends Component{
         <Switch>
           <Route exact path = '/' component={FilterControls} />
           <Route path = '/:strain' component={StrainContainer} />
+          <Route path = '/:strain/name' component= {StrainCard} />
         </Switch>
     );
   }
