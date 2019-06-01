@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import FilterControls from '../FilterControls/FilterControls'
 import '../App/App.scss'
+import StrainContainer from '../StrainContainer/StrainContainer'
 
 class App extends Component{
+
 
 
   render() {
