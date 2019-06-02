@@ -1,0 +1,22 @@
+.navlink {
+  margin: 5px;
+  font-size: 27px;
+  text-decoration: none;
+  color:black;
+}
+
+.navlink:hover {
+  color:white;
+}
+
+.strains-container {
+  margin: 0 auto ; 
+  text-align: center;
+  background-color: lightblue;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  overflow: scroll;
+}
+
+
+

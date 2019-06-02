@@ -1,14 +1,21 @@
-.filter-button {
-  color:green;
-  height: 100px;
-  width: 140px;
-  margin: 15px;
-  font-size: 30px;
-  border-radius: 25px;
-  background-color: blanchedalmond;
-}
 
 .button-container {
   display: flex;
   justify-content: center;
+}
+
+.header {
+  color:black;
+  text-align: center;
+  font-size: 100px;
+  font-family: 'Kaushan Script', cursive;
+  font-size: 120px;
+  letter-spacing: .15em;
+}
+
+ .app {
+  background-image: url('https://images3.alphacoders.com/225/thumb-1920-22567.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
 }

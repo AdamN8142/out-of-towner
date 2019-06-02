@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { addSativa, addIndica, addHybrid, setFilter } from '../../Actions'
 import StrainContainer from '../StrainContainer/StrainContainer'
+import { Route, Switch, withRouter } from 'react-router-dom'
+import '../Filter/Filter.scss'
 
 
 class Filter extends Component {
@@ -22,7 +24,6 @@ class Filter extends Component {
       default:
         break;
     } 
-    this.displayLinks()
   }
 
   fetchStrain = async (strain) => {
@@ -32,24 +33,12 @@ class Filter extends Component {
     return results
   }
 
-  displayLinks = () => {
-    const mappedLinks = this.props.strain.indica.map((item)=> {
-      const links = item.map((bud)=>{
-        console.log(bud.name)
-        return (      
-          <div>
-            
-          </div>
-        )
-    })
-  })
-}
 
 
   render(){
     return (
       <div>
-        <button onClick={() => this.handleClick()}>{this.props.children}</button>
+        <button className = 'filter-button' onClick={() => this.handleClick()}>{this.props.children}</button>
       </div>
     )
   }
@@ -70,5 +59,3 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(mapStateToProps, mapDispatchToProps)(Filter)
 
 
-//on cliick, take in the value of the button or pull from state the selectedStrain
-//
