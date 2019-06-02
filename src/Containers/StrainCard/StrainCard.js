@@ -4,7 +4,7 @@ class StrainCard extends Component {
   render() {
      return (
        <div>
-         <h1>HLELLO</h1>
+         <h1></h1>
        </div>
 
      )

@@ -47,6 +47,14 @@ class StrainContainer extends Component {
   }
   
 
+  fetchDetails = async (id) => {
+    const url = `strainapi.evanbusse.com/API_KEY/strains/data/desc/${id}`
+    const response = await fetc(url)
+    const results = await response.json()
+    return results
+  }
+
+
 
   render(){
     return (
