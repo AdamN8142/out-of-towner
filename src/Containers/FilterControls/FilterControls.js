@@ -10,7 +10,7 @@ class FilterControls extends Component {
   render() {
     return (
       <div className='app'>
-       <h1 className='hi'>Out of Towner</h1>
+       <h1 className='header'>Out of Towner</h1>
         <div className="button-container">
           <Link to='/sativa'>
             <Filter filter='Sativa'>Sativa</Filter>

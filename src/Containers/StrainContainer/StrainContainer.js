@@ -13,7 +13,7 @@ class StrainContainer extends Component {
           return ( 
             <NavLink
             className='navlink'
-            to={`/${bud.name}`}
+            to={`/${this.props.match.params.strain}/${bud.name}`}
             >{bud.name}</NavLink>
           )
         })
@@ -25,7 +25,7 @@ class StrainContainer extends Component {
           return (
             <NavLink
             className='navlink'
-            to={`/${bud.name}`}
+            to={`/${this.props.match.params.strain}/${bud.name}`}
             >{bud.name}</NavLink>
           )
         })
@@ -37,7 +37,7 @@ class StrainContainer extends Component {
           return (
             <NavLink
             className='navlink'
-            to={`/${bud.name}`}
+            to={`/${this.props.match.params.strain}/${bud.name}`}
             >{bud.name}</NavLink>
           )
         })
@@ -51,7 +51,7 @@ class StrainContainer extends Component {
   render(){
     return (
           <div className="strains-container">
-            {this.displayStrains()}
+              {this.displayStrains()}
           </div>
     )
   }
