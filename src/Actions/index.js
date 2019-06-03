@@ -18,9 +18,9 @@ export const setFilter = (filter) => ({
   filter
 })
 
-export const addDescription = (id, description, filter) => ({
+export const addDescription = (id, desc, filter) => ({
   type: 'ADD_DESCRIPTION',
   id,
-  description,
+  desc,
   filter
 })
