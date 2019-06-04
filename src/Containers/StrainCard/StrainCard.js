@@ -41,7 +41,8 @@ git
 const mapStateToProps = (state) => ({
   strain: state.strain,
   description: state.description,
-  effects:state.effects
+  effects:state.effects,
+  flavors: state.flavors
   })
 
 
