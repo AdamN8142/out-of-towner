@@ -16,6 +16,7 @@ describe('strainsReducer', () => {
     const result = strainsReducer(intialState, {})
     expect(result).toEqual(expected)
   })
+
   it('should update state of sativa', () => {
     const intialState = {
       sativa: [],
@@ -32,7 +33,7 @@ describe('strainsReducer', () => {
       {sativa: {name:'bobby'}
     }
   ]
-    const result = strainsReducer([] , action)
+    const result = strainsReducer({} , action)
     expect(result).toEqual(expected)
 
   })
