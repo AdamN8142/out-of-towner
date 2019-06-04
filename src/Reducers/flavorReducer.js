@@ -1,7 +1,7 @@
 export const flavorReducer = (state= [], action ) => {
   switch(action.type) {
-    case 'ADD_FLAVOR':
-      return action.flavor
+    case 'ADD_FLAVORS':
+      return action.flavors
     default:
       return state
   }
