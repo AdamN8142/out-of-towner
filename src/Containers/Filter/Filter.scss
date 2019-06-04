@@ -1,16 +1,17 @@
 .filter-button {
-  color:green;
-  height: 80px;
-  width: 140px;
-  margin: 15px;
+  color: blueviolet;
+  height: 90px;
+  width: 150px;
+  margin: 25px;
   margin-bottom: 30px;
-  font-size: 30px;
+  font-size: 24px;
   border-radius: 15px;
-  opacity: .9;
-  background-color: blanchedalmond;
+  opacity: .83;
+  background-image:linear-gradient(plum, skyblue);
+  font-family: monospace;
 }
 
 .filter-button:hover {
   color: white;
-  background-color: green;
+  background-color: rgb(63, 63, 214);
 }
