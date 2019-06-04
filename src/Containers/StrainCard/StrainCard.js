@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import './StrainCard.css'
 
 class StrainCard extends Component {
-
-git 
   mappedEffects = () => {
     let effectObj = Object.entries(this.props.effects)
     return effectObj.map((effect)=> {
@@ -23,13 +21,24 @@ git
     })
   }
 
+  mappedFlavors = () => {
+    let mappedFlavors = this.props.flavors.map((flavor)=> {
+      return (<p className='flavor'>{flavor}</p>)
+    })
+    return mappedFlavors
+  }
+
 
   render() {
      return (
        <div>
          <h4 className='strain-bio'>{this.props.description}</h4>
          <div className='effects-container'>
-         {this.mappedEffects()}
+           {this.mappedEffects()}
+         </div>
+         <p>FLAVORS</p>
+         <div className= 'flavor-container'>
+           {this.mappedFlavors()}
          </div>
        </div>
 
@@ -41,7 +50,8 @@ git
 const mapStateToProps = (state) => ({
   strain: state.strain,
   description: state.description,
-  effects:state.effects
+  effects:state.effects,
+  flavors: state.flavors
   })
 
 

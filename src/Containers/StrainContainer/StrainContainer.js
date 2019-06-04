@@ -96,7 +96,7 @@ class StrainContainer extends Component {
 
 const mapStateToProps = (state) => ({
   strain: state.strain,
-  filter: state.filter 
+  filter: state.filter,
   })
 
 const mapDispatchToProps = (dispatch) => ({
