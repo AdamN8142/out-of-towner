@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 import '../StrainContainer/StrainContainer.scss'
-import { addDescription } from '../../Actions'
-import { async } from 'q';
+import { addDescription, addEffects } from '../../Actions'
+// import { async } from 'q';
 
 class StrainContainer extends Component {
 
@@ -61,18 +61,18 @@ class StrainContainer extends Component {
     const url = `http://strainapi.evanbusse.com/AqtPtuS/strains/data/effects/${id}`
     const response = await fetch(url)
     const result = await response.json()
-    console.log(result)
+    return result
   }
 
 
   handleClick = async (event) => {
     const id = event.target.id
     console.log(id)
-    // const filter = this.props.filter
     const details = await this.fetchDetails(id)
     const effects = await this.fetchEffects(id)
-    console.log(effects)
+ 
      await this.props.addDetails(details.desc)
+     await this.props.addEffects(effects)
   }
 
 
@@ -94,7 +94,8 @@ const mapStateToProps = (state) => ({
   })
 
 const mapDispatchToProps = (dispatch) => ({
-  addDetails: (description) => dispatch(addDescription(description))
+  addDetails: (description) => dispatch(addDescription(description)),
+  addEffects: (effects) => dispatch(addEffects(effects))
 }) 
 
 export default connect(mapStateToProps, mapDispatchToProps)(StrainContainer)
