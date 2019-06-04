@@ -23,9 +23,3 @@ export const addDescription = (description) => ({
   description 
 })
 
-// export const addDescription = (id, desc, filter) => ({
-//   type: 'ADD_DESCRIPTION',
-//   id,
-//   desc,
-//   filter
-// })

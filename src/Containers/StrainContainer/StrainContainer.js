@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 import '../StrainContainer/StrainContainer.scss'
 import { addDescription } from '../../Actions'
+import { async } from 'q';
 
 class StrainContainer extends Component {
 
@@ -56,6 +57,12 @@ class StrainContainer extends Component {
     return results
   }
 
+  fetchEffects = async(id) => {
+    const url = `http://strainapi.evanbusse.com/AqtPtuS/strains/data/effects/${id}`
+    const response = await fetch(url)
+    const result = await response.json()
+    console.log(result)
+  }
 
 
   handleClick = async (event) => {
@@ -63,9 +70,8 @@ class StrainContainer extends Component {
     console.log(id)
     // const filter = this.props.filter
     const details = await this.fetchDetails(id)
-    console.log(details)
-    console.log(details.desc)
-    // console.log( details, id, filter )
+    const effects = await this.fetchEffects(id)
+    console.log(effects)
      await this.props.addDetails(details.desc)
   }
 
