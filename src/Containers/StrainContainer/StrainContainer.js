@@ -9,8 +9,7 @@ class StrainContainer extends Component {
   displayStrains = () => {
     let strainsToShow; 
     if(this.props.filter === 'Sativa') {
-       strainsToShow =  this.props.strain.sativa.map((item)=> {
-        return item.map((bud)=> {
+       strainsToShow =  this.props.strain.sativa.map((bud)=> {
           return ( 
             <NavLink
             className='navlink'
@@ -18,12 +17,11 @@ class StrainContainer extends Component {
             to={`/${this.props.match.params.strain}/${bud.name}`}
             >{bud.name}</NavLink>
           )
-        })
+  
       })
       return strainsToShow
     } else if (this.props.filter === 'Indica') {
-      strainsToShow = this.props.strain.indica.map((item)=> {
-        return item.map((bud)=> {
+      strainsToShow = this.props.strain.indica.map((bud)=> {
           return (
             <NavLink
             className='navlink'
@@ -31,12 +29,10 @@ class StrainContainer extends Component {
             to={`/${this.props.match.params.strain}/${bud.name}`}
             >{bud.name}</NavLink>
           )
-        })
       })
       return strainsToShow
-    } else if (this.props.filter === "Hybrid") {
-      strainsToShow = this.props.strain.hybrid.map((item)=> {
-        return item.map((bud)=> {
+    } else if (this.props.filter === "Hybrid" && this.props.strain.hybrid.length) {
+      strainsToShow = this.props.strain.hybrid.map((bud)=> {
           return (
             <NavLink
             className='navlink'
@@ -46,7 +42,7 @@ class StrainContainer extends Component {
             >{bud.name}</NavLink>
           )
         })
-      })
+      
       return strainsToShow
     }
   }
