@@ -1,26 +1,19 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
+import './StrainCard.css'
 
 class StrainCard extends Component {
 
-
-
-  // mappedEffects = () => {
-  //   let effectObj = Object.entries(this.props.effects)
-  //   return effectObj.map((effect)=> {
-  //     return ( `${effect[0]}: ${effect[1]} `)
-  //   })
-  // }
-
+git 
   mappedEffects = () => {
     let effectObj = Object.entries(this.props.effects)
     return effectObj.map((effect)=> {
       return ( 
         <div>
-        <h3>{effect[0].toUpperCase()}</h3>
+        <p className='effect-title'>{effect[0].toUpperCase()} EFFECTS</p>
             {effect[1].map((item)=> {
               return (
-                <li>
+                <li className='effect-name'>
                   {item}
                 </li>
               )
@@ -31,13 +24,13 @@ class StrainCard extends Component {
   }
 
 
-
-
   render() {
      return (
        <div>
-         <h4>{this.props.description}</h4>
+         <h4 className='strain-bio'>{this.props.description}</h4>
+         <div className='effects-container'>
          {this.mappedEffects()}
+         </div>
        </div>
 
      )
