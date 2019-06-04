@@ -64,8 +64,9 @@ class StrainContainer extends Component {
     // const filter = this.props.filter
     const details = await this.fetchDetails(id)
     console.log(details)
+    console.log(details.desc)
     // console.log( details, id, filter )
-    //  this.props.addDetails(id, details.desc, filter)
+     await this.props.addDetails(details.desc)
   }
 
 
@@ -87,7 +88,7 @@ const mapStateToProps = (state) => ({
   })
 
 const mapDispatchToProps = (dispatch) => ({
-  addDetails: (id) => dispatch(addDescription(id))
+  addDetails: (description) => dispatch(addDescription(description))
 }) 
 
 export default connect(mapStateToProps, mapDispatchToProps)(StrainContainer)
