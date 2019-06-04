@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 import '../StrainContainer/StrainContainer.scss'
-import { addDescription, addEffects } from '../../Actions'
+import { addDescription, addEffects, addFlavors } from '../../Actions'
 
 class StrainContainer extends Component {
 
@@ -18,7 +18,6 @@ class StrainContainer extends Component {
             to={`/${this.props.match.params.strain}/${bud.name}`}
             >{bud.name}</NavLink>
           )
-  
       })
       return strainsToShow
     } else if (this.props.filter === 'Indica') {
@@ -63,14 +62,23 @@ class StrainContainer extends Component {
     return result
   }
 
+  fetchFlavors = async (id) => {
+    const url =`http://strainapi.evanbusse.com/AqtPtuS/strains/data/flavors/${id}`
+    const response = await fetch(url)
+    const result = await response.json()
+    return result
+  }
+
 
   handleClick = async (event) => {
     const id = event.target.id
     console.log(id)
     const details = await this.fetchDetails(id)
     const effects = await this.fetchEffects(id)
+    const flavors = await this.fetchFlavors(id)
      await this.props.addDetails(details.desc)
      await this.props.addEffects(effects)
+     await this.props.addFlavors(flavors)
   }
 
 
@@ -93,7 +101,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   addDetails: (description) => dispatch(addDescription(description)),
-  addEffects: (effects) => dispatch(addEffects(effects))
+  addEffects: (effects) => dispatch(addEffects(effects)),
+  addFlavors: (flavors) => dispatch(addFlavors(flavors))
 }) 
 
 export default connect(mapStateToProps, mapDispatchToProps)(StrainContainer)

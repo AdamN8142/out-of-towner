@@ -28,3 +28,7 @@ export const addEffects = (effects) => ({
   effects
 })
 
+export const addFlavors = (flavors) => ({
+  type:'ADD_FLAVOR',
+  flavors
+})
