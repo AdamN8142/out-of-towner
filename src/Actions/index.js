@@ -18,9 +18,13 @@ export const setFilter = (filter) => ({
   filter
 })
 
-export const addDescription = (id, desc, filter) => ({
+export const addDescription = (description) => ({
   type: 'ADD_DESCRIPTION',
-  id,
-  desc,
-  filter
+  description 
 })
+
+export const addEffects = (effects) => ({
+  type: 'ADD_EFFECTS',
+  effects
+})
+

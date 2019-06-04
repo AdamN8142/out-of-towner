@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 import '../StrainContainer/StrainContainer.scss'
-import { addDescription } from '../../Actions'
+import { addDescription, addEffects } from '../../Actions'
 
 class StrainContainer extends Component {
 
@@ -14,6 +14,7 @@ class StrainContainer extends Component {
             <NavLink
             className='navlink'
             id={`${bud.id}`}
+            onClick={this.handleClick}
             to={`/${this.props.match.params.strain}/${bud.name}`}
             >{bud.name}</NavLink>
           )
@@ -26,7 +27,8 @@ class StrainContainer extends Component {
             <NavLink
             className='navlink'
             id={`${bud.id}`}
-            to={`/${this.props.match.params.strain}/${bud.name}`}
+            onClick={this.handleClick}
+            to={`/${this.props.match.params.strain}/${bud.id}`}
             >{bud.name}</NavLink>
           )
       })
@@ -38,7 +40,7 @@ class StrainContainer extends Component {
             className='navlink'
             id={`${bud.id}`}
             onClick={this.handleClick}
-            to={`/${this.props.match.params.strain}/${bud.name}`}
+            to={`/${this.props.match.params.strain}/${bud.id}`}
             >{bud.name}</NavLink>
           )
         })
@@ -54,19 +56,24 @@ class StrainContainer extends Component {
     return results
   }
 
+  fetchEffects = async(id) => {
+    const url = `http://strainapi.evanbusse.com/AqtPtuS/strains/data/effects/${id}`
+    const response = await fetch(url)
+    const result = await response.json()
+    return result
+  }
 
 
   handleClick = async (event) => {
     const id = event.target.id
-    const filter = this.props.filter
+    console.log(id)
     const details = await this.fetchDetails(id)
-    console.log(details)
-    // console.log( details, id, filter )
-     this.props.addDetails(id, details.desc, filter)
+    const effects = await this.fetchEffects(id)
+     await this.props.addDetails(details.desc)
+     await this.props.addEffects(effects)
   }
 
 
-  //I can console log the detils for each one that i click on so i know im getting the right details. just having issued setting it to the store 
 
 
   render(){
@@ -85,7 +92,8 @@ const mapStateToProps = (state) => ({
   })
 
 const mapDispatchToProps = (dispatch) => ({
-  addDetails: (id) => dispatch(addDescription(id))
+  addDetails: (description) => dispatch(addDescription(description)),
+  addEffects: (effects) => dispatch(addEffects(effects))
 }) 
 
 export default connect(mapStateToProps, mapDispatchToProps)(StrainContainer)
