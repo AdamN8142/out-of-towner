@@ -1,5 +1,6 @@
 import { strainsReducer } from './strainsReducer'
 import * as actions from '../Actions/index'
+import { statement } from '@babel/template';
 
 describe('strainsReducer', () => {
   it('should return initial state', () => {
@@ -18,7 +19,7 @@ describe('strainsReducer', () => {
   })
 
   it('should update state of sativa', () => {
-    const intialState = {
+    const initialState = {
       sativa: [],
       indica: [],
       hybrid: []
@@ -26,24 +27,19 @@ describe('strainsReducer', () => {
     const action = {
       type:'ADD_SATIVA', 
       sativa: 
-        {name:'bobby'}
+        [{name:'bobby'}]
     
   }
-    const expected = [
-      {sativa: {name:'bobby'}
+    const expected = {
+      sativa: [{name:'bobby'}],
+      indica: [],
+      hybrid: []
     }
-  ]
-    const result = strainsReducer({} , action)
+  
+    const result = strainsReducer(initialState, action)
     expect(result).toEqual(expected)
 
   })
 })
 
 
-// it('should return pokemon', () => {
-//   const action = {type:'ADD_POKEMON', pokemon:[{reptar: 'says hi'}, {nope: 'say hi too'}]}
-//   const expected = [{reptar: 'says hi'}, {nope: 'say hi too'}]
-//   const result = pokemonReducer([], action)
-//   expect(result).toEqual(expected)
-// })
-// })

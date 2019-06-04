@@ -40,24 +40,21 @@ const initialState = {
 export const strainsReducer = (state = initialState, action) => {
   switch(action.type) {
     case 'ADD_SATIVA':
-      return {...state, sativa: [action.sativa]}
+      return {...state, sativa: action.sativa}
     case 'ADD_INDICA':
-      return {...state, indica: [action.indica]}
+      return {...state, indica: action.indica}
     case 'ADD_HYBRID':
-      return {...state, hybrid: [action.hybrid]}
+      return {...state, hybrid: action.hybrid}
     case 'ADD_DESCRIPTION':
       const withDescription = state.hybrid.map((bud)=> {
-  
-        return bud.map((buds)=> {
-          // console.log('action', action.id)
-          // console.log('buds' ,buds.id)
-          if(buds.id == parseInt(action.id)) {
-            return{...buds, description: action.desc}
+        console.log(bud.id)
+        console.log(action.id)
+          if(bud.id == parseInt(action.id)) {
+            return{...bud, description: action.desc}
           }else {
-            return buds
+            return bud
           }
         })
-      })
         return {...state, hybrid: withDescription}
     default:
         return state 

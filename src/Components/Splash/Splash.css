@@ -1,0 +1,40 @@
+.splash-header { 
+  text-align: center;
+  font-size: 140px;
+  margin: 10px;
+  color: white;
+  font-family: 'Kaushan Script', cursive;
+  margin-bottom: 90px;
+}
+
+.twenty-one-text {
+  text-align: center;
+  color: white;
+  font-size: 25px;
+  margin-bottom: 30px;
+  font-weight: 200;
+
+}
+
+.splash {
+  background-color: black;
+  height:100vh;
+}
+
+.verify-age-button {
+  height: 50px;
+  width: 150px;
+  border-radius: 10px;
+  font-size: 19px;
+}
+
+.verify-age-button:hover {
+  background-color: green;
+  color:white;
+}
+
+
+
+.a{
+  text-align: center;
+}
