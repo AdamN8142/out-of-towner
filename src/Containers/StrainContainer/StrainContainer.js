@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 import '../StrainContainer/StrainContainer.scss'
 import { addDescription, addEffects } from '../../Actions'
-// import { async } from 'q';
 
 class StrainContainer extends Component {
 
@@ -29,7 +28,7 @@ class StrainContainer extends Component {
             className='navlink'
             id={`${bud.id}`}
             onClick={this.handleClick}
-            to={`/${this.props.match.params.strain}/${bud.name}`}
+            to={`/${this.props.match.params.strain}/${bud.id}`}
             >{bud.name}</NavLink>
           )
       })
@@ -70,7 +69,6 @@ class StrainContainer extends Component {
     console.log(id)
     const details = await this.fetchDetails(id)
     const effects = await this.fetchEffects(id)
- 
      await this.props.addDetails(details.desc)
      await this.props.addEffects(effects)
   }
