@@ -14,6 +14,7 @@ class StrainContainer extends Component {
             <NavLink
             className='navlink'
             id={`${bud.id}`}
+            onClick={this.handleClick}
             to={`/${this.props.match.params.strain}/${bud.name}`}
             >{bud.name}</NavLink>
           )
@@ -26,6 +27,7 @@ class StrainContainer extends Component {
             <NavLink
             className='navlink'
             id={`${bud.id}`}
+            onClick={this.handleClick}
             to={`/${this.props.match.params.strain}/${bud.name}`}
             >{bud.name}</NavLink>
           )
@@ -58,15 +60,15 @@ class StrainContainer extends Component {
 
   handleClick = async (event) => {
     const id = event.target.id
-    const filter = this.props.filter
+    console.log(id)
+    // const filter = this.props.filter
     const details = await this.fetchDetails(id)
     console.log(details)
     // console.log( details, id, filter )
-     this.props.addDetails(id, details.desc, filter)
+    //  this.props.addDetails(id, details.desc, filter)
   }
 
 
-  //I can console log the detils for each one that i click on so i know im getting the right details. just having issued setting it to the store 
 
 
   render(){
