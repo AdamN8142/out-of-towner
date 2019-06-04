@@ -64,8 +64,9 @@ class StrainContainer extends Component {
     const id = event.target.id
     const filter = this.props.filter
     const details = await this.fetchDetails(id)
+    console.log(details)
     // console.log( details, id, filter )
-    await this.props.addDetails(id, details, filter)
+     this.props.addDetails(id, details.desc, filter)
   }
 
 
