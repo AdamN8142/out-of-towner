@@ -23,3 +23,8 @@ export const addDescription = (description) => ({
   description 
 })
 
+export const addEffects = (effects) => ({
+  type: 'ADD_EFFECTS',
+  effects
+})
+
