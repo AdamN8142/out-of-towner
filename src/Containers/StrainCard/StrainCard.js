@@ -23,7 +23,7 @@ class StrainCard extends Component {
 
   mappedFlavors = () => {
     let mappedFlavors = this.props.flavors.map((flavor)=> {
-      return (<p>{flavor}</p>)
+      return (<p className='flavor'>{flavor}</p>)
     })
     return mappedFlavors
   }
@@ -34,9 +34,12 @@ class StrainCard extends Component {
        <div>
          <h4 className='strain-bio'>{this.props.description}</h4>
          <div className='effects-container'>
-         {this.mappedEffects()}
+           {this.mappedEffects()}
          </div>
-         {this.mappedFlavors()}
+         <p>FLAVORS</p>
+         <div className= 'flavor-container'>
+           {this.mappedFlavors()}
+         </div>
        </div>
 
      )
