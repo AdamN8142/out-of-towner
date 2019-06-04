@@ -32,3 +32,13 @@ export const addFlavors = (flavors) => ({
   type:'ADD_FLAVORS',
   flavors
 })
+
+export const setError = (message) => ({
+  type: 'SET_ERROR',
+  message
+})
+
+export const isLoading = (bool) => ({
+  type: 'IS_LOADING',
+  bool
+})
