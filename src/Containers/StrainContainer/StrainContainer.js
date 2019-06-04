@@ -40,7 +40,7 @@ class StrainContainer extends Component {
             className='navlink'
             id={`${bud.id}`}
             onClick={this.handleClick}
-            to={`/${this.props.match.params.strain}/${bud.name}`}
+            to={`/${this.props.match.params.strain}/${bud.id}`}
             >{bud.name}</NavLink>
           )
         })
