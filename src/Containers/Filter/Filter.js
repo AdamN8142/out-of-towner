@@ -11,26 +11,33 @@ class Filter extends Component {
   handleClick = async () => {
     this.props.setFilter(this.props.filter)
     const strain = await this.fetchStrain(this.props.filter)
-    switch(this.props.filter) {
-      case 'Sativa':
-        this.props.addSativa(strain)
-        break;
-      case 'Indica':
-        this.props.addIndica(strain)
-        break;
-      case 'Hybrid':
-        this.props.addHybrid(strain) 
-        break;
-      default:
-        break;
-    } 
+    if(this.props.isLoading === true) {
+      return (<h1>LOADING..</h1>)
+    } else {
+
+      switch(this.props.filter) {
+        case 'Sativa':
+          this.props.addSativa(strain)
+          break;
+        case 'Indica':
+          this.props.addIndica(strain)
+          break;
+        case 'Hybrid':
+          this.props.addHybrid(strain) 
+          break;
+        default:
+          break;
+      } 
+    }
   }
 
   fetchStrain = async (strain) => {
     try{
       const url = `http://strainapi.evanbusse.com/AqtPtuS/strains/search/race/${strain}`
+      this.props.isLoading(true)
       const response = await fetch(url)
       const results = await response.json()
+      this.props.isLoading(false)
       return results
     }
     catch(error) {
