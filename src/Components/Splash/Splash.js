@@ -2,11 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Splash.css'
 
-
-
 export const Splash = () => {
-
-
 
   return (
     <div className= 'splash'>
