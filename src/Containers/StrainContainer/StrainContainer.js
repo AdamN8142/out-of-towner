@@ -92,7 +92,6 @@ class StrainContainer extends Component {
 
   handleClick = async (event) => {
     const id = event.target.id
-    console.log(id)
     const details = await this.fetchDetails(id)
     const effects = await this.fetchEffects(id)
     const flavors = await this.fetchFlavors(id)
@@ -107,7 +106,7 @@ class StrainContainer extends Component {
   render(){
     return (
           <div className="strains-container">
-              {this.props.loading ? <h1>Loading...</h1> :this.displayStrains()}
+              {this.props.loading ? <h1 className="loading">Loading...</h1> :this.displayStrains()}
           </div>
     )
   }

@@ -11,6 +11,7 @@ class FilterControls extends Component {
     return (
       <div className='app'>
        <h1 className='header'>Out of Towner</h1>
+       <h3 className='sub-header'>Choose your adventure...</h3>
         <div className="button-container">
           <Link to='/sativa'>
             <Filter filter='Sativa'>Sativa</Filter>
