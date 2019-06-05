@@ -16,7 +16,7 @@ describe('actions', () => {
 
   it('should return an action obj type "ADD_SATIVA" and payload',() => {
     const sativa = [
-      {weed: 2 },
+      {weed: 2},
       {weed: 3}
     ]
     const expected = {
@@ -79,5 +79,4 @@ describe('actions', () => {
     const result = actions.isLoading(bool)
     expect(result).toEqual(expected)
   })
-
 })
