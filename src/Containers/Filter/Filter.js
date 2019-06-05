@@ -12,7 +12,7 @@ class Filter extends Component {
     this.props.setFilter(this.props.filter)
     const strain = await this.fetchStrain(this.props.filter)
     if(this.props.isLoading === true) {
-      return (<h1>LOADING..</h1>)
+      return (<h1>HELP ON THE WAY!</h1>)
     } else {
 
       switch(this.props.filter) {
