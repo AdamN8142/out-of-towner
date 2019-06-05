@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './FilterControls.scss'
 import Filter from '../Filter/Filter'
 import { Link } from 'react-router-dom'
+import { PropTypes } from 'prop-types';
+
 
 class FilterControls extends Component {
 
@@ -26,8 +28,11 @@ class FilterControls extends Component {
 }
 
 
-
-
+FilterControls.propTypes = {
+  history: PropTypes.object, 
+  location: PropTypes.object,
+  match: PropTypes.object
+}
 
 
 export default FilterControls;

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { addSativa, addIndica, addHybrid, setFilter, setError, isLoading } from '../../Actions'
-import StrainContainer from '../StrainContainer/StrainContainer'
-import { Route, Switch, withRouter } from 'react-router-dom'
 import '../Filter/Filter.scss'
+import { PropTypes } from 'prop-types';
+
 
 
 class Filter extends Component {
@@ -70,6 +70,18 @@ export const mapDispatchToProps = (dispatch) => ({
   isLoading: (bool) => dispatch(isLoading(bool))
   
 })
+
+Filter.propTypes = {
+  addHybrid: PropTypes.func,
+  addSativa: PropTypes.func,
+  addIndica: PropTypes.func,
+  error: PropTypes.string,
+  isLoading: PropTypes.func,
+  loading: PropTypes.bool,
+  setError: PropTypes.func,
+  setFilter: PropTypes.func,
+  strain: PropTypes.object
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Filter)
 
