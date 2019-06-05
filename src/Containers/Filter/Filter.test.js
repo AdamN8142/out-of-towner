@@ -1,6 +1,7 @@
 import { mapStateToProps, mapDispatchToProps} from '../Filter/Filter'
 import * as actions from '../../Actions/index'
 
+
 describe('mapStateToProps', () => {
   it('should return a strain prop', () => {
     const mockState = {
@@ -90,4 +91,9 @@ describe('mapDispatchToProps', () => {
   })
 })
 
-
+describe('Filter', () => {
+  it('should match snapshot', () => {
+    let wrapper
+    expect(wrapper).toMatchSnapshot()
+  })
+})

@@ -93,5 +93,11 @@ describe('mapDispatchToProps', () => {
     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
   })
 })
+describe('StrainContainer', () => {
+  it('should match snapshot', () => {
+    let wrapper
+    expect(wrapper).toMatchSnapshot()
+  })
+})
 
 

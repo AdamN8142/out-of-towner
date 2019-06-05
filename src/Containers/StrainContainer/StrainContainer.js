@@ -100,9 +100,6 @@ class StrainContainer extends Component {
      await this.props.addFlavors(flavors)
   }
 
-
-
-
   render(){
     return (
           <div className="strains-container">

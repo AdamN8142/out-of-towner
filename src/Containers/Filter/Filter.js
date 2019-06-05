@@ -4,8 +4,6 @@ import { addSativa, addIndica, addHybrid, setFilter, setError, isLoading } from 
 import '../Filter/Filter.scss'
 import { PropTypes } from 'prop-types';
 
-
-
 class Filter extends Component {
 
   handleClick = async () => {
@@ -43,8 +41,6 @@ class Filter extends Component {
       this.props.setError(error.message)
     }
   }
-
-
 
   render(){
     return (

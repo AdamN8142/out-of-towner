@@ -1,5 +1,4 @@
 import { mapStateToProps } from '../StrainCard/StrainCard'
-import * as actions from '../../Actions/index'
 
 describe('mapStateToProps', () => {
   it('should return a strain prop', () => {
@@ -51,5 +50,10 @@ describe('mapStateToProps', () => {
   })
 })
 
-
+describe('StrainCard', () => {
+  it('should match snapshot', () => {
+    let wrapper
+    expect(wrapper).toMatchSnapshot()
+  })
+})
 
