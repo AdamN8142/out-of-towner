@@ -1,8 +1,9 @@
 .navlink {
   margin: 5px;
-  font-size: 20px;
+  font-size: 24px;
   text-decoration: none;
   color:black;
+  font-family: 'Overpass Mono', monospace;
 }
 
 .navlink:hover {
@@ -12,13 +13,18 @@
 .strains-container {
   margin: 0 auto ; 
   text-align: center;
-  background-color: lightblue;
+  background-image: linear-gradient(to right,plum,skyblue,rgba(194, 143, 48, 0.577));
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   overflow: scroll;
 }
 
 
-
-
+.loading {
+  color:white;
+  text-align: center;
+  height: 100vh;
+  font-size: 48px;
+  margin-top: 15%
+}
 

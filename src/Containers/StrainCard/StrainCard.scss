@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans&display=swap');
+
+.strain-card {
+  height: 100vh;
+  margin-top: 0px;
+}
+
+.effect-title {
+  color:white;
+  font-family: 'Overpass Mono', monospace;
+
+}
+
+.effect-name {
+  margin:10px;
+  font-family: 'Overpass Mono', monospace;
+
+}
+
+.effects-container{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.strain-bio{ 
+  margin: 0 auto;
+  padding: 20px;
+  width: 75%;
+  margin-bottom: 40px;
+  font-size: 24px;
+  padding-top: 75px;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.flavor-container {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.back-button {
+  font-size: 35px;
+  margin:20px;
+  text-decoration: none;
+  font-weight: 100;
+  color:white;
+}
+
+.back-button:hover {
+  color:rgb(249, 84, 84);
+}
+
+.flavor {
+  font-size: 30px;
+  padding-left: 25px;
+  font-family: 'Overpass Mono', monospace;
+}
+
+.flavor-text{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.strain-card {
+background-image: linear-gradient(lightblue,plum)}
+
+.no-bio {
+  text-align: center;
+}

@@ -1,14 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Overpass+Mono&display=swap');
+
+
 .filter-button {
   color: blueviolet;
-  height: 90px;
-  width: 150px;
-  margin: 25px;
+  height: 125px;
+  width: 200px;
+  margin: 50px;
   margin-bottom: 30px;
-  font-size: 24px;
+  font-size: 26px;
   border-radius: 15px;
   opacity: .83;
-  background-image:linear-gradient(plum, skyblue);
-  font-family: monospace;
+  background-image: linear-gradient(plum, skyblue);
+  font-family: 'Overpass Mono', monospace;
 }
 
 .filter-button:hover {
