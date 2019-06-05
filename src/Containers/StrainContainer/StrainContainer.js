@@ -106,7 +106,7 @@ class StrainContainer extends Component {
   render(){
     return (
           <div className="strains-container">
-              {this.displayStrains()}
+              {this.props.loading ? <h1>Loading...</h1> :this.displayStrains()}
           </div>
     )
   }

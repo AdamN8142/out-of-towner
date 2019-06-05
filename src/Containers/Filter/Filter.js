@@ -11,10 +11,9 @@ class Filter extends Component {
   handleClick = async () => {
     this.props.setFilter(this.props.filter)
     const strain = await this.fetchStrain(this.props.filter)
-    if(this.props.isLoading === true) {
+    if(this.props.loading === true) {
       return (<h1>HELP ON THE WAY!</h1>)
     } else {
-
       switch(this.props.filter) {
         case 'Sativa':
           this.props.addSativa(strain)
