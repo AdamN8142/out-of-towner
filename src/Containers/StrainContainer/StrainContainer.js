@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 import '../StrainContainer/StrainContainer.scss'
-import { addDescription, addEffects, addFlavors } from '../../Actions'
+import { addDescription, addEffects, addFlavors, setError, isLoading } from '../../Actions'
 
 class StrainContainer extends Component {
 
@@ -49,24 +49,43 @@ class StrainContainer extends Component {
   }
   
   fetchDetails = async (id) => {
-    const url = `http://strainapi.evanbusse.com/AqtPtuS/strains/data/desc/${id}`
-    const response = await fetch(url)
-    const results = await response.json()
-    return results
+    try{
+      const url = `http://strainapi.evanbusse.com/AqtPtuS/strains/data/desc/${id}`
+      this.props.isLoading(true)
+      const response = await fetch(url)
+      const results = await response.json()
+      this.props.isLoading(false)
+      return results
+    }
+    catch(error){
+      this.props.setError(error.message)
+    }
   }
 
   fetchEffects = async(id) => {
-    const url = `http://strainapi.evanbusse.com/AqtPtuS/strains/data/effects/${id}`
-    const response = await fetch(url)
-    const result = await response.json()
-    return result
+    try{
+      const url = `http://strainapi.evanbusse.com/AqtPtuS/strains/data/effects/${id}`
+      this.props.isLoading(true)
+      const response = await fetch(url)
+      const result = await response.json()
+      this.props.isLoading(false)
+      return result
+    }catch(error){
+      this.props.setError(error.message)
+    }
   }
 
   fetchFlavors = async (id) => {
-    const url =`http://strainapi.evanbusse.com/AqtPtuS/strains/data/flavors/${id}`
-    const response = await fetch(url)
-    const result = await response.json()
-    return result
+    try{
+      const url =`http://strainapi.evanbusse.com/AqtPtuS/strains/data/flavors/${id}`
+      this.props.isLoading(true)
+      const response = await fetch(url)
+      const result = await response.json()
+      this.props.isLoading(false)
+      return result
+    }catch(error) {
+      this.props.setError(error.message)
+    }
   }
 
 
@@ -87,7 +106,7 @@ class StrainContainer extends Component {
   render(){
     return (
           <div className="strains-container">
-              {this.displayStrains()}
+              {this.props.loading ? <h1>Loading...</h1> :this.displayStrains()}
           </div>
     )
   }
@@ -97,12 +116,16 @@ class StrainContainer extends Component {
 const mapStateToProps = (state) => ({
   strain: state.strain,
   filter: state.filter,
+  loading: state.loading,
+  error: state.error
   })
 
 const mapDispatchToProps = (dispatch) => ({
   addDetails: (description) => dispatch(addDescription(description)),
   addEffects: (effects) => dispatch(addEffects(effects)),
-  addFlavors: (flavors) => dispatch(addFlavors(flavors))
+  addFlavors: (flavors) => dispatch(addFlavors(flavors)),
+  setError: (message) => dispatch(setError(message)),
+  isLoading: (bool) => dispatch(isLoading(bool))
 }) 
 
 export default connect(mapStateToProps, mapDispatchToProps)(StrainContainer)
