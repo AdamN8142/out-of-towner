@@ -49,7 +49,7 @@ class StrainCard extends Component {
 }
 
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   strain: state.strain,
   description: state.description,
   effects:state.effects,

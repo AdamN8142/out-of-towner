@@ -113,14 +113,14 @@ class StrainContainer extends Component {
 }
 
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   strain: state.strain,
   filter: state.filter,
   loading: state.loading,
   error: state.error
   })
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   addDetails: (description) => dispatch(addDescription(description)),
   addEffects: (effects) => dispatch(addEffects(effects)),
   addFlavors: (flavors) => dispatch(addFlavors(flavors)),
