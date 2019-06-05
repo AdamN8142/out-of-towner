@@ -59,4 +59,25 @@ describe('actions', () => {
     const result = actions.addDescription(description)
     expect(result).toEqual(expected)
   })
+
+  it('should return an action obj type "SET_ERROR" and payload',() => {
+    const message = "No, sorry"
+    const expected = {
+      type: 'SET_ERROR',
+      message
+    }
+    const result = actions.setError(message)
+    expect(result).toEqual(expected)
+  })
+
+  it('should return an action obj type "IS_LOADING" and payload',() => {
+    const bool = false
+    const expected = {
+      type: 'IS_LOADING',
+      bool
+    }
+    const result = actions.isLoading(bool)
+    expect(result).toEqual(expected)
+  })
+
 })
