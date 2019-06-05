@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import './StrainCard.css'
+import { PropTypes } from 'prop-types';
 
 class StrainCard extends Component {
   mappedEffects = () => {
@@ -56,5 +57,15 @@ export const mapStateToProps = (state) => ({
   flavors: state.flavors
   })
 
+  StrainCard.propTypes = {
+    desciption: PropTypes.string,
+    history: PropTypes.object, 
+    location: PropTypes.object,
+    match: PropTypes.object,
+    flavors: PropTypes.array,
+    effects: PropTypes.object,
+    strain: PropTypes.object
+  }
 
 export default connect(mapStateToProps)(StrainCard)
+

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 import '../StrainContainer/StrainContainer.scss'
 import { addDescription, addEffects, addFlavors, setError, isLoading } from '../../Actions'
+import { PropTypes } from 'prop-types';
 
 class StrainContainer extends Component {
 
@@ -127,6 +128,21 @@ export const mapDispatchToProps = (dispatch) => ({
   setError: (message) => dispatch(setError(message)),
   isLoading: (bool) => dispatch(isLoading(bool))
 }) 
+
+StrainContainer.propTypes = {
+  addDetails: PropTypes.func,
+  addEffects: PropTypes.func,
+  addFlavors: PropTypes.func,
+  error: PropTypes.string,
+  filter: PropTypes.string,
+  isLoading: PropTypes.func,
+  loading: PropTypes.bool,
+  strain: PropTypes.object,
+  setError: PropTypes.func,
+  history: PropTypes.object, 
+  location: PropTypes.object,
+  match: PropTypes.object
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(StrainContainer)
 
