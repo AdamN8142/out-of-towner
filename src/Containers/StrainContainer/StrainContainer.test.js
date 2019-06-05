@@ -52,7 +52,7 @@ describe('mapStateToProps', () => {
 
 describe('mapDispatchToProps', () => {
   it.skip('should dispatch details', () => {
-    const mockDetails = {desc:'hi'}
+    const mockDetails = 'hi'
     const mockDispatch = jest.fn()
     const actionToDispatch = actions.addDetails(mockDetails)
     const mappedProps = mapDispatchToProps(mockDispatch)
