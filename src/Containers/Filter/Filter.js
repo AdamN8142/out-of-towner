@@ -55,13 +55,13 @@ class Filter extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   strain: state.strain,
   loading: state.loading,
   error: state.error
   })
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   setFilter: (filter) => dispatch(setFilter(filter)),
   addSativa: (sativa) => dispatch(addSativa(sativa)),
   addIndica: (indica) => dispatch(addIndica(indica)),

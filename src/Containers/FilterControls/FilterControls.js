@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import { addSativa, addIndica, addHybrid } from '../../Actions'
 import './FilterControls.scss'
 import Filter from '../Filter/Filter'
 import { Link } from 'react-router-dom'
